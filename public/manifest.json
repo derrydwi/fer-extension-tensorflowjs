@@ -1,0 +1,21 @@
+{
+  "manifest_version": 3,
+  "name": "Facial Emotion Recognition",
+  "version": "1.0",
+  "description": "An extension to recognize emotions on Google Meet",
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_title": "Facial Emotion Recognition",
+    "default_popup": "popup.html"
+  },
+  "permissions": ["storage"],
+  "content_scripts": [
+    {
+      "matches": ["https://meet.google.com/*"],
+      "run_at": "document_idle",
+      "js": ["contentScript.js"]
+    }
+  ]
+}
